@@ -2,7 +2,7 @@ const cron = require('node-cron')
 birthdayCollection = require('./model/form')
 
 const {sendBirthdayEmail} = require('./mail')
-cron.schedule('0 7 * * *', ()=>{
+cron.schedule('0 8 * * *', ()=>{
     const today = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })
 
     birthdayCollection.find({ dob: today }).toArray((err, results) => {
